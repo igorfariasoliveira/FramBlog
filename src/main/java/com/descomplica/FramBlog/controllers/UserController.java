@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/users")
 public class UserController {
@@ -34,7 +36,11 @@ public class UserController {
 
     @DeleteMapping(path = "/delete")
     private ResponseEntity<?> delete(@RequestParam final Long id){
-        userService.delte(id);
+        userService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping(path = "/")
+    private @ResponseBody String authentication(){
+        return "Hello World";
     }
 }
