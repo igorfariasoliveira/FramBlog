@@ -8,4 +8,8 @@ import java.util.List;
 @Service
 public interface UserService {
     User save(User user);
+
+    List<User> getAll();
+
+    User get(Long id);
 }
