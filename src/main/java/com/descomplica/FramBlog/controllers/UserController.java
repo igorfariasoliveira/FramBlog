@@ -15,4 +15,15 @@ public class UserController {
     private @ResponseBody User save(@RequestBody User user) {
         return  userService.save(user);
     }
+
+    @GetMapping(path = "/getAll")
+    private @ResponseBody List<User> getAll() {
+        return userService.getAll();
+    }
+
+    @GetMapping(path = "/get")
+    private @ResponseBody User get(@RequestParam final Long id) {
+        return userService.get(id);
+    }
+    
 }
